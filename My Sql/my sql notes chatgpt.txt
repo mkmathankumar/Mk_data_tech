@@ -1,0 +1,2072 @@
+                   INTRODUCTION TO MySQL (Deep Explanation)
+1️⃣ What is Data?
+
+Data = Raw facts.
+
+Example:
+101
+
+Mk
+
+50000
+
+Chennai
+
+Indha values than data.
+
+2️⃣ What is Database?
+
+Database = Organized collection of data.
+
+Real life example:
+
+Imagine one company la 500 employees irukanga.
+If they write everything in notebook:
+
+Employee name
+
+Salary
+
+Department
+
+After 1 year notebook full confuse aagidum.
+
+So they store everything inside computer in structured way → That is Database.
+
+Simple definition:
+
+👉 Database stores data in structured format for easy access.
+
+3️⃣ What is DBMS?
+
+DBMS = Software used to manage database.
+
+Without DBMS:
+
+Data store panna mudiyathu properly
+
+Search panna kashtam
+
+Update panna problem
+
+DBMS allows:
+
+Create database
+
+Insert data
+
+Update data
+
+Delete data
+
+Secure data
+
+Examples:
+
+MySQL
+
+Oracle
+
+SQL Server
+
+4️⃣ What is RDBMS?
+
+RDBMS = Relational Database Management System
+
+Key idea:
+👉 Data stored in tables
+👉 Tables related using keys
+
+Example:
+
+Table 1 – Departments
+dept_id	dept_name
+1	HR
+2	IT
+Table 2 – Employees
+emp_id	name	dept_id
+101	Mk	2
+
+Here:
+dept_id connects both tables.
+
+This relationship concept = RDBMS.
+
+5️⃣ What is MySQL?
+
+MySQL is:
+
+Open source
+
+Free
+
+Most popular RDBMS
+
+Uses SQL language
+
+Companies use it for:
+
+Websites
+
+Banking systems
+
+College systems
+
+E-commerce
+
+Important:
+👉 SQL = Language
+👉 MySQL = Software
+
+Interview la kelvi varum:
+“Is SQL and MySQL same?”
+
+Answer:
+No.
+
+SQL = Language
+MySQL = Database software that uses SQL
+
+6️⃣ What is SQL?
+
+SQL = Structured Query Language
+
+Used to:
+
+Insert data
+
+Select data
+
+Update data
+
+Delete data
+
+Create tables
+
+Manage permissions
+
+Example:
+
+SELECT * FROM employees;
+
+Meaning:
+Select all columns from employees table.
+
+7️⃣ How SQL Query Works Internally?
+
+When you write:
+
+SELECT * FROM employees;
+
+Process:
+
+Query goes to MySQL Server
+
+Server checks syntax
+
+Server searches data from disk
+
+Sends result back
+
+So MySQL Server is brain.
+
+8️⃣ Basic SQL Syntax Structure
+
+General pattern:
+
+SELECT column_name
+FROM table_name
+WHERE condition;
+
+Example:
+
+SELECT name, salary
+FROM employees
+WHERE salary > 30000;
+
+Meaning:
+Show name and salary of employees whose salary > 30000.
+
+9️⃣ Important SQL Rules
+
+SQL is case-insensitive
+select = SELECT = same
+
+End query with semicolon ;
+
+Keywords usually written in CAPS
+
+Strings written inside single quotes
+
+Example:
+
+SELECT * FROM employees
+WHERE name = 'Mk';
+🔥 Real Life Understanding
+
+Think MySQL like:
+
+📦 Database = Cupboard
+📁 Table = Drawer
+📄 Row = One file
+📝 Column = File details
+
+🎯 Interview Important Questions
+
+Q1: What is difference between DBMS and RDBMS?
+Answer:
+DBMS stores data.
+RDBMS stores data in relational table format.
+
+Q2: What is SQL?
+Answer:
+SQL is a language used to communicate with database.
+
+Q3: What is MySQL?
+Answer:
+MySQL is an open-source relational database system.
+
+               Tables, Constraints & Keys (Deep Explanation)
+1️⃣ What is a Table?
+
+Table = Structure used to store data inside database.
+
+A table contains:
+
+Rows → Records
+
+Columns → Fields
+
+Example: Employees Table
+
+emp_id	name	salary	dept
+101	Mk	50000	IT
+
+Here:
+
+emp_id, name, salary, dept → Columns
+
+Each row → One employee record
+
+2️⃣ How to Create a Table?
+
+Syntax:
+
+CREATE TABLE table_name (
+    column_name datatype,
+    column_name datatype
+);
+
+Example:
+
+CREATE TABLE employees (
+    emp_id INT,
+    name VARCHAR(50),
+    salary DECIMAL(10,2)
+);
+
+Meaning:
+
+INT → Integer number
+
+VARCHAR(50) → Text up to 50 characters
+
+DECIMAL(10,2) → Decimal number
+
+3️⃣ What is Constraint?
+
+Constraint = Rule applied on a column.
+
+It controls:
+
+What type of data allowed
+
+What not allowed
+
+Example:
+If emp_id must not be duplicate → use constraint.
+
+🔑 TYPES OF KEYS (Very Important)
+1️⃣ Primary Key
+
+Primary Key:
+
+Uniquely identifies each row
+
+Cannot be NULL
+
+Cannot be duplicate
+
+Example:
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+Why important?
+
+If 2 employees have same emp_id → confusion.
+
+So primary key ensures uniqueness.
+
+2️⃣ Foreign Key
+
+Foreign Key:
+
+Used to create relationship between tables
+
+Refers to primary key of another table
+
+Example:
+
+Departments Table:
+
+CREATE TABLE departments (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50)
+);
+
+Employees Table:
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES departments(dept_id)
+);
+
+Meaning:
+employees.dept_id must exist in departments table.
+
+3️⃣ Unique Key
+
+Unique Key:
+
+No duplicate values allowed
+
+But NULL allowed (sometimes depending on DB)
+
+Example:
+
+CREATE TABLE users (
+    id INT PRIMARY KEY,
+    email VARCHAR(100) UNIQUE
+);
+
+Two users cannot have same email.
+
+4️⃣ Composite Key
+
+Composite Key:
+Primary key made using 2 or more columns.
+
+Example:
+
+CREATE TABLE student_marks (
+    student_id INT,
+    subject_id INT,
+    marks INT,
+    PRIMARY KEY (student_id, subject_id)
+);
+
+Here:
+Combination of student_id + subject_id must be unique.
+
+5️⃣ Candidate Key
+
+Candidate Key:
+All columns that can become primary key.
+
+Example:
+
+If:
+
+emp_id unique
+
+email unique
+
+Both are candidate keys.
+But only one becomes primary key.
+
+6️⃣ Super Key
+
+Super Key:
+Any combination of columns that uniquely identifies row.
+
+Example:
+
+emp_id
+
+emp_id + name
+
+emp_id + salary
+
+All are super keys.
+But minimal one is candidate key.
+
+📌 Important Constraint Types
+NOT NULL
+
+Column cannot store NULL value.
+
+name VARCHAR(50) NOT NULL
+DEFAULT
+
+Gives default value.
+
+salary INT DEFAULT 10000
+CHECK
+
+Condition must be satisfied.
+
+salary INT CHECK (salary > 0)
+🔥 Real Life Example
+
+Think keys like:
+
+Primary Key → Aadhaar number
+Foreign Key → Department ID
+Unique Key → Email ID
+
+🎯 Interview Important
+
+Difference between:
+Primary Key vs Unique Key
+
+Primary:
+
+No NULL
+
+Only one per table
+
+Unique:
+
+Can allow NULL
+
+Multiple allowed
+
+        DDL, DML, DCL, TCL (Full Deep Explanation)
+
+SQL commands 4 categories la divide pannirukanga.
+
+👉 DDL
+👉 DML
+👉 DCL
+👉 TCL
+
+Indha classification interview la romba important.
+
+1️⃣ DDL – Data Definition Language
+
+DDL = Structure create & modify panna use pannuvom.
+
+It works on:
+👉 Tables
+👉 Database structure
+
+Important:
+DDL commands automatically commit (rollback panna mudiyadhu usually).
+
+DDL Commands:
+🔹 CREATE
+
+Used to create database or table.
+
+CREATE DATABASE company;
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    salary INT
+);
+🔹 ALTER
+
+Used to modify table structure.
+
+Add column:
+
+ALTER TABLE employees
+ADD department VARCHAR(50);
+
+Modify column:
+
+ALTER TABLE employees
+MODIFY salary DECIMAL(10,2);
+
+Drop column:
+
+ALTER TABLE employees
+DROP department;
+🔹 DROP
+
+Deletes entire table permanently.
+
+DROP TABLE employees;
+
+⚠ Data also deleted permanently.
+
+🔹 TRUNCATE
+
+Deletes all rows but keeps table structure.
+
+TRUNCATE TABLE employees;
+
+Difference:
+TRUNCATE is faster than DELETE.
+Cannot rollback normally.
+
+2️⃣ DML – Data Manipulation Language
+
+DML = Used to work with data inside table.
+
+🔹 INSERT
+
+Add data into table.
+
+INSERT INTO employees (emp_id, name, salary)
+VALUES (101, 'Mk', 50000);
+
+Insert multiple rows:
+
+INSERT INTO employees VALUES
+(102, 'Arun', 40000),
+(103, 'Ravi', 35000);
+🔹 SELECT
+
+Retrieve data.
+
+SELECT * FROM employees;
+
+Select specific columns:
+
+SELECT name, salary FROM employees;
+🔹 UPDATE
+
+Modify existing data.
+
+UPDATE employees
+SET salary = 60000
+WHERE emp_id = 101;
+
+⚠ Without WHERE → all rows update aagum.
+
+🔹 DELETE
+
+Delete rows.
+
+DELETE FROM employees
+WHERE emp_id = 101;
+
+Without WHERE:
+All rows delete aagum 😬
+
+3️⃣ DCL – Data Control Language
+
+DCL = Permissions manage panna use pannuvom.
+
+🔹 GRANT
+
+Give permission.
+
+GRANT SELECT ON employees TO user1;
+🔹 REVOKE
+
+Remove permission.
+
+REVOKE SELECT ON employees FROM user1;
+4️⃣ TCL – Transaction Control Language
+
+TCL = Control transactions.
+
+Transaction = Group of SQL statements executed together.
+
+🔹 START TRANSACTION
+START TRANSACTION;
+🔹 COMMIT
+
+Save changes permanently.
+
+COMMIT;
+🔹 ROLLBACK
+
+Undo changes.
+
+ROLLBACK;
+🔹 SAVEPOINT
+
+Create checkpoint inside transaction.
+
+SAVEPOINT sp1;
+
+Rollback to savepoint:
+
+ROLLBACK TO sp1;
+🔥 DDL vs DML Difference (Interview)
+DDL	DML
+Structure change	Data change
+CREATE, ALTER	INSERT, UPDATE
+Auto commit	Can rollback
+🎯 Interview Questions
+
+Q: Difference between DELETE and TRUNCATE?
+
+DELETE:
+
+Row by row
+
+Can use WHERE
+
+Can rollback
+
+TRUNCATE:
+
+Removes all rows
+
+Faster
+
+Cannot use WHERE
+
+Q: What is transaction?
+
+Transaction = Logical unit of work.
+
+Example:
+Bank transfer:
+
+Deduct from A
+
+Add to B
+Both must succeed or both fail.
+
+      CRUD Operations (Deep Practical Explanation)
+
+CRUD =
+Create
+Read
+Update
+Delete
+
+Indha 4 operations every application use pannum.
+
+👨‍💼 Example Table
+
+Let’s use this table:
+
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    salary INT,
+    department VARCHAR(50)
+);
+1️⃣ C – CREATE (INSERT Data)
+
+Used to add new records.
+
+Basic Syntax:
+INSERT INTO table_name (column1, column2)
+VALUES (value1, value2);
+Example:
+INSERT INTO employees (emp_id, name, salary, department)
+VALUES (101, 'Mk', 50000, 'IT');
+
+Add multiple rows:
+
+INSERT INTO employees VALUES
+(102, 'Arun', 40000, 'HR'),
+(103, 'Ravi', 35000, 'Finance');
+🔥 Important:
+
+If you don’t specify column names:
+
+INSERT INTO employees VALUES (104, 'Kumar', 45000, 'IT');
+
+Values must follow exact column order.
+
+2️⃣ R – READ (SELECT Data)
+
+Used to retrieve data.
+
+Select all columns:
+SELECT * FROM employees;
+Select specific columns:
+SELECT name, salary FROM employees;
+With condition:
+SELECT * FROM employees
+WHERE department = 'IT';
+Real Thinking:
+
+SELECT is like asking question to database:
+
+“Show me employees from IT department.”
+
+3️⃣ U – UPDATE (Modify Data)
+
+Used to change existing records.
+
+Syntax:
+UPDATE table_name
+SET column = value
+WHERE condition;
+Example:
+UPDATE employees
+SET salary = 60000
+WHERE emp_id = 101;
+
+⚠ Very Important:
+
+If you write:
+
+UPDATE employees
+SET salary = 60000;
+
+👉 All employees salary will become 60000 😬
+
+Always use WHERE condition carefully.
+
+4️⃣ D – DELETE (Remove Data)
+
+Used to delete rows.
+
+Example:
+DELETE FROM employees
+WHERE emp_id = 102;
+
+Without WHERE:
+
+DELETE FROM employees;
+
+👉 Entire table data delete aagum.
+
+🔥 CRUD Real Life Example
+
+Bank system:
+
+CREATE → New account open
+READ → Check balance
+UPDATE → Deposit money
+DELETE → Close account
+
+🧠 Interview Important Points
+
+Q: What happens if WHERE condition missing in UPDATE?
+
+Answer:
+All rows will be updated.
+
+Q: Difference between DELETE and TRUNCATE?
+
+DELETE:
+
+Can use WHERE
+
+Slower
+
+Can rollback
+
+TRUNCATE:
+
+Removes all rows
+
+Faster
+
+Cannot use WHERE
+
+🔎 Extra: SELECT Execution Order (Important Concept)
+
+When writing:
+
+SELECT name
+FROM employees
+WHERE salary > 40000
+ORDER BY salary;
+
+Internally order:
+
+FROM
+
+WHERE
+
+SELECT
+
+ORDER BY
+
+Interview la kelvi varum.
+
+CRUD now strong ah clear ah irukkum da 💪🔥
+
+              Filtering & Sorting Data (Deep Explanation)
+
+Filtering = Specific rows choose panna
+Sorting = Order la arrange panna
+
+1️⃣ WHERE Clause
+
+WHERE is used to filter rows based on condition.
+
+Syntax:
+SELECT column_name
+FROM table_name
+WHERE condition;
+Example:
+SELECT * FROM employees
+WHERE salary > 40000;
+
+Meaning:
+Show employees whose salary is greater than 40000.
+
+2️⃣ Comparison Operators
+Operator	Meaning
+=	Equal
+>	Greater than
+<	Less than
+>=	Greater or equal
+<=	Less or equal
+<> or !=	Not equal
+
+Example:
+
+SELECT * FROM employees
+WHERE department != 'HR';
+3️⃣ AND Operator
+
+Used when multiple conditions must be TRUE.
+
+SELECT * FROM employees
+WHERE department = 'IT'
+AND salary > 40000;
+
+Both conditions must be satisfied.
+
+4️⃣ OR Operator
+
+At least one condition must be TRUE.
+
+SELECT * FROM employees
+WHERE department = 'IT'
+OR department = 'HR';
+5️⃣ BETWEEN
+
+Used for range values.
+
+SELECT * FROM employees
+WHERE salary BETWEEN 30000 AND 50000;
+
+Includes both 30000 and 50000.
+
+6️⃣ IN Operator
+
+Used to match multiple values.
+
+Instead of writing:
+
+WHERE department = 'IT'
+OR department = 'HR'
+
+We write:
+
+SELECT * FROM employees
+WHERE department IN ('IT', 'HR');
+
+Cleaner and better.
+
+7️⃣ LIKE Operator
+
+Used for pattern matching.
+
+Used with:
+
+% → Any number of characters
+
+_ → Single character
+
+Starts with:
+SELECT * FROM employees
+WHERE name LIKE 'M%';
+
+Names starting with M.
+
+Ends with:
+SELECT * FROM employees
+WHERE name LIKE '%k';
+
+Names ending with k.
+
+Contains:
+SELECT * FROM employees
+WHERE name LIKE '%ar%';
+
+Name containing “ar”.
+
+8️⃣ ORDER BY (Sorting)
+
+Used to sort result.
+
+Ascending (default):
+SELECT * FROM employees
+ORDER BY salary;
+Descending:
+SELECT * FROM employees
+ORDER BY salary DESC;
+9️⃣ LIMIT (Important in MySQL)
+
+Used to restrict number of rows returned.
+
+SELECT * FROM employees
+LIMIT 5;
+
+Returns first 5 rows.
+
+With offset:
+
+SELECT * FROM employees
+LIMIT 5 OFFSET 5;
+
+Skip first 5 rows, show next 5.
+
+Used in pagination.
+
+🔥 Real Life Example
+
+E-commerce site:
+
+User searches:
+"Show top 10 products under 5000 sorted by price"
+
+SQL:
+
+SELECT * FROM products
+WHERE price < 5000
+ORDER BY price DESC
+LIMIT 10;
+🧠 Interview Important
+
+Q: Difference between WHERE and HAVING?
+
+WHERE:
+
+Used before GROUP BY
+
+Filters rows
+
+HAVING:
+
+Used after GROUP BY
+
+Filters grouped data
+
+(Next part la detail ah paapom)
+
+Q: Can we use WHERE with aggregate function?
+
+❌ No.
+
+Wrong:
+
+WHERE SUM(salary) > 50000
+
+Correct → Use HAVING.
+
+Filtering & Sorting now strong da 💪🔥
+
+         Aggregate Functions + GROUP BY + HAVING
+1️⃣ What is Aggregate Function?
+
+Aggregate function means → Multiple rows ah eduthu one single value return pannum.
+
+Example:
+
+100 employees salary irukku
+
+SUM(salary) → 1 total amount return pannum
+
+2️⃣ Important Aggregate Functions
+Function	Meaning
+COUNT()	Number of rows
+SUM()	Total value
+AVG()	Average value
+MIN()	Smallest value
+MAX()	Largest value
+🔹 COUNT()
+SELECT COUNT(*) FROM employees;
+
+Meaning:
+Total number of employees.
+
+🔹 SUM()
+SELECT SUM(salary) FROM employees;
+
+Total salary amount.
+
+🔹 AVG()
+SELECT AVG(salary) FROM employees;
+
+Average salary.
+
+🔹 MIN() & MAX()
+SELECT MIN(salary), MAX(salary)
+FROM employees;
+
+Lowest and Highest salary.
+
+⚠ Important Rule
+
+Aggregate functions always return single value (unless GROUP BY used).
+
+3️⃣ GROUP BY (Very Important)
+
+GROUP BY is used to group rows with same values.
+
+Example situation:
+
+emp_id	name	department	salary
+1	A	IT	40000
+2	B	HR	30000
+3	C	IT	50000
+4	D	HR	35000
+Question:
+
+Department wise total salary?
+
+SQL:
+SELECT department, SUM(salary)
+FROM employees
+GROUP BY department;
+Output:
+department	SUM(salary)
+IT	90000
+HR	65000
+
+👉 GROUP BY means:
+“Same value irukkura rows ah group pannitu calculation pannum”
+
+4️⃣ Important Rule of GROUP BY
+
+If you use GROUP BY:
+
+Every column in SELECT must be:
+
+Either aggregate function
+
+OR included in GROUP BY
+
+Wrong:
+
+SELECT name, SUM(salary)
+FROM employees
+GROUP BY department;
+
+❌ Error.
+
+Correct:
+
+SELECT department, SUM(salary)
+FROM employees
+GROUP BY department;
+5️⃣ HAVING Clause
+
+HAVING is used to filter grouped data.
+
+Remember:
+
+WHERE → filters rows
+HAVING → filters groups
+
+Example:
+
+Department wise total salary greater than 80000:
+
+SELECT department, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department
+HAVING SUM(salary) > 80000;
+🔥 WHERE vs HAVING (Clear Difference)
+WHERE	HAVING
+Filters rows	Filters grouped result
+Used before GROUP BY	Used after GROUP BY
+Cannot use aggregate	Can use aggregate
+Execution Order of SQL (Very Important for Interview)
+
+FROM
+
+WHERE
+
+GROUP BY
+
+HAVING
+
+SELECT
+
+ORDER BY
+
+LIMIT
+
+Remember this order da 🔥
+
+🧠 Real World Example
+
+E-commerce site:
+
+“Show departments where average salary > 40000”
+
+SELECT department, AVG(salary)
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 40000;
+💡 Interview Question
+
+Q: Why HAVING needed? Why not WHERE?
+
+Because WHERE cannot use aggregate functions like SUM(), AVG().
+
+Ippo:
+
+✔ Aggregate clear
+✔ GROUP BY clear
+✔ HAVING clear
+
+
+                JOINS (Very Very Important)
+1️⃣ Why JOIN Needed?
+
+Real world la data single table la irukkathu ❌
+Multiple tables la store pannuvanga.
+
+Example:
+
+🧑 employees table
+emp_id	name	dept_id	salary
+1	Arun	101	40000
+2	Bala	102	30000
+3	Kiran	101	50000
+🏢 departments table
+dept_id	dept_name
+101	IT
+102	HR
+
+Question:
+Show employee name + department name.
+
+👉 Two tables combine panna JOIN use pannuvom.
+
+2️⃣ Types of JOIN
+
+INNER JOIN
+
+LEFT JOIN
+
+RIGHT JOIN
+
+FULL JOIN
+
+SELF JOIN
+
+3️⃣ INNER JOIN
+
+Only matching rows return pannum.
+
+SELECT e.name, d.dept_name
+FROM employees e
+INNER JOIN departments d
+ON e.dept_id = d.dept_id;
+
+👉 Meaning:
+Matching dept_id iruntha rows mattum varum.
+
+Output:
+
+name	dept_name
+Arun	IT
+Bala	HR
+Kiran	IT
+4️⃣ LEFT JOIN
+
+Left table full ah varum.
+Match illa na NULL varum.
+
+SELECT e.name, d.dept_name
+FROM employees e
+LEFT JOIN departments d
+ON e.dept_id = d.dept_id;
+
+👉 All employees varum.
+Department match illa na dept_name = NULL.
+
+5️⃣ RIGHT JOIN
+
+Right table full ah varum.
+
+SELECT e.name, d.dept_name
+FROM employees e
+RIGHT JOIN departments d
+ON e.dept_id = d.dept_id;
+
+👉 All departments varum.
+Employee illa na name = NULL.
+
+6️⃣ FULL JOIN
+
+Both tables full ah varum.
+Match illa na NULL fill pannum.
+
+SELECT e.name, d.dept_name
+FROM employees e
+FULL JOIN departments d
+ON e.dept_id = d.dept_id;
+
+⚠ MySQL la FULL JOIN direct ah illa.
+Use UNION method.
+
+7️⃣ SELF JOIN (Important)
+
+Same table ah itself join pannuvom.
+
+Example:
+Manager id store pannirukkom.
+
+emp_id	name	manager_id
+1	Arun	NULL
+2	Bala	1
+3	Kiran	1
+
+Query:
+
+SELECT e.name AS employee,
+       m.name AS manager
+FROM employees e
+LEFT JOIN employees m
+ON e.manager_id = m.emp_id;
+
+👉 Employee + manager name varum.
+
+🧠 JOIN Logic Mind Trick
+
+Think like this:
+
+INNER → Intersection
+LEFT → All left + match
+RIGHT → All right + match
+FULL → Everything
+
+🔥 Interview Question
+
+Q: Difference between WHERE and ON in JOIN?
+
+ON → Join condition
+WHERE → Filter condition
+
+Example:
+
+SELECT e.name, d.dept_name
+FROM employees e
+INNER JOIN departments d
+ON e.dept_id = d.dept_id
+WHERE e.salary > 40000;
+
+👉 First join
+👉 Then filter salary
+
+⚡ Important for Data Engineering
+
+Joins use pannuvom:
+
+✔ Data warehouse
+✔ ETL process
+✔ Reporting
+✔ Analytics
+
+Ippo:
+
+✔ Aggregate
+✔ GROUP BY
+✔ HAVING
+✔ JOINS
+
+
+           Subquery + CTE + Window Functions
+1️⃣ Subquery (Nested Query)
+
+Subquery na → Query inside another query.
+
+🔹 Example 1 – Average salary vida adhigama earn panra employees
+SELECT name, salary
+FROM employees
+WHERE salary > (
+    SELECT AVG(salary) FROM employees
+);
+
+👉 Inside query first execute aagum
+👉 AVG(salary) value return pannum
+👉 Outside query compare pannum
+
+🔹 Example 2 – IT department employees
+SELECT name
+FROM employees
+WHERE dept_id = (
+    SELECT dept_id
+    FROM departments
+    WHERE dept_name = 'IT'
+);
+🔥 Types of Subquery
+
+Scalar subquery → single value return
+
+Multiple row subquery
+
+Correlated subquery
+
+🔹 Correlated Subquery (Important)
+
+Inner query depends on outer query.
+
+SELECT e1.name, e1.salary
+FROM employees e1
+WHERE salary > (
+    SELECT AVG(e2.salary)
+    FROM employees e2
+    WHERE e1.dept_id = e2.dept_id
+);
+
+👉 Department wise average compare pannum.
+
+2️⃣ CTE (Common Table Expression)
+
+CTE na temporary result set.
+
+Syntax:
+
+WITH cte_name AS (
+    SELECT column1, column2
+    FROM table_name
+)
+SELECT *
+FROM cte_name;
+🔹 Example
+WITH dept_salary AS (
+    SELECT dept_id, SUM(salary) AS total_salary
+    FROM employees
+    GROUP BY dept_id
+)
+SELECT *
+FROM dept_salary;
+
+👉 CTE readable + clean code.
+
+🔥 Why CTE Important?
+
+✔ Complex query simplify pannum
+✔ Multiple times reuse pannalam
+✔ Recursive query support pannum
+
+3️⃣ Window Functions (Very Very Important)
+
+Window function = Row by row calculation without collapsing rows.
+
+Unlike GROUP BY → it won’t reduce rows.
+
+🔹 Example – Rank employees by salary
+SELECT name,
+       salary,
+       RANK() OVER (ORDER BY salary DESC) AS salary_rank
+FROM employees;
+
+👉 Highest salary → rank 1
+
+🔹 ROW_NUMBER()
+SELECT name,
+       salary,
+       ROW_NUMBER() OVER (ORDER BY salary DESC) AS row_num
+FROM employees;
+
+Difference:
+
+RANK() → Same salary na same rank
+ROW_NUMBER() → Always unique number
+
+🔹 Partition By (Most Important)
+
+Department wise rank:
+
+SELECT name,
+       dept_id,
+       salary,
+       RANK() OVER (PARTITION BY dept_id ORDER BY salary DESC) AS dept_rank
+FROM employees;
+
+👉 Each department separate ah ranking.
+
+🔥 Window vs GROUP BY
+GROUP BY	Window Function
+Rows reduce aagum	Rows reduce aagathu
+One value per group	Row by row calculation
+Basic aggregation	Advanced analytics
+💡 Data Engineering Use
+
+Window functions use pannuvanga:
+
+✔ Top N records
+✔ Running total
+✔ Deduplication
+✔ Latest record find pannurathuku
+
+🔹 Running Total Example
+SELECT name,
+       salary,
+       SUM(salary) OVER (ORDER BY emp_id) AS running_total
+FROM employees;
+🧠 Interview Question
+
+Q: Difference between Subquery and CTE?
+
+Subquery → Inside query
+CTE → WITH keyword, readable, reusable
+
+Ippo da Mk 🔥
+SQL almost full strong base cover pannom:
+
+✔ Basic
+✔ WHERE
+✔ GROUP BY
+✔ HAVING
+✔ JOINS
+✔ Subquery
+✔ CTE
+✔ Window
+
+Next final part 👇
+👉 PART 9 – Index + Views + Stored Procedure (Professional Level)
+
+Pogalama? 😎🔥
+
+Window function la dence rank lead lag lam illa
+
+Correct da Mk 😎🔥
+Window function la innum important functions irukku:
+
+✔ DENSE_RANK()
+✔ LEAD()
+✔ LAG()
+
+Ippo clear ah explain panren 💪
+
+📘 1️⃣ DENSE_RANK()
+
+RANK() madhiri than.
+But difference → rank skip aagathu.
+
+Example data:
+name	salary
+A	50000
+B	40000
+C	40000
+D	30000
+🔹 Using RANK()
+SELECT name, salary,
+       RANK() OVER (ORDER BY salary DESC) AS rnk
+FROM employees;
+
+Output:
+
+name	salary	rnk
+A	50000	1
+B	40000	2
+C	40000	2
+D	30000	4 ❗
+
+👉 3 skip aayiduchu.
+
+🔹 Using DENSE_RANK()
+SELECT name, salary,
+       DENSE_RANK() OVER (ORDER BY salary DESC) AS drnk
+FROM employees;
+
+Output:
+
+name	salary	drnk
+A	50000	1
+B	40000	2
+C	40000	2
+D	30000	3 ✅
+
+👉 No skipping.
+
+🔥 Difference Summary
+RANK()	DENSE_RANK()
+Rank skip aagum	Rank skip aagathu
+1,2,2,4	1,2,2,3
+📘 2️⃣ LAG()
+
+Previous row value bring pannum.
+
+🔹 Example:
+SELECT name,
+       salary,
+       LAG(salary) OVER (ORDER BY salary) AS prev_salary
+FROM employees;
+
+Output:
+
+name	salary	prev_salary
+D	30000	NULL
+B	40000	30000
+C	40000	40000
+A	50000	40000
+
+👉 Previous row salary show pannum.
+
+🔥 Use Case
+
+✔ Compare current vs previous value
+✔ Sales growth calculation
+✔ Trend analysis
+
+📘 3️⃣ LEAD()
+
+Next row value bring pannum.
+
+SELECT name,
+       salary,
+       LEAD(salary) OVER (ORDER BY salary) AS next_salary
+FROM employees;
+
+Output:
+
+name	salary	next_salary
+D	30000	40000
+B	40000	40000
+C	40000	50000
+A	50000	NULL
+
+👉 Next row salary.
+
+🧠 Real Interview Example
+
+Salary difference from previous employee:
+
+SELECT name,
+       salary,
+       salary - LAG(salary) OVER (ORDER BY salary) AS salary_diff
+FROM employees;
+🔥 Data Engineering Use
+
+LEAD/LAG use pannuvanga:
+
+✔ Time series data
+✔ Daily revenue compare
+✔ Customer churn analysis
+✔ Change detection
+
+⚡ Full Window Function List (Important Ones)
+
+ROW_NUMBER()
+
+RANK()
+
+DENSE_RANK()
+
+LAG()
+
+LEAD()
+
+SUM() OVER()
+
+AVG() OVER()
+
+COUNT() OVER()
+
+
+📘 1️⃣ Running Total (Cumulative Sum) – Deep Explanation
+Example Table:
+emp_id	name	salary
+1	A	1000
+2	B	2000
+3	C	3000
+4	D	4000
+🔹 Query:
+SELECT emp_id,
+       name,
+       salary,
+       SUM(salary) OVER (ORDER BY emp_id) AS running_total
+FROM employees;
+🔥 Output:
+emp_id	salary	running_total
+1	1000	1000
+2	2000	3000
+3	3000	6000
+4	4000	10000
+
+👉 Explanation:
+
+Row 1 → 1000
+Row 2 → 1000 + 2000
+Row 3 → 1000 + 2000 + 3000
+Row 4 → All sum
+
+📘 2️⃣ Partition + Running Total
+
+Department wise running total:
+
+SELECT dept_id,
+       name,
+       salary,
+       SUM(salary) OVER (PARTITION BY dept_id ORDER BY emp_id) AS dept_running_total
+FROM employees;
+
+👉 Each department separate calculation.
+
+📘 3️⃣ Window Frame (Advanced Concept 🔥)
+
+By default:
+
+RANGE BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW
+
+Meaning:
+From first row till current row.
+
+🔹 Custom Window Frame Example
+
+Last 2 rows sum:
+
+SELECT emp_id,
+       salary,
+       SUM(salary) OVER (
+           ORDER BY emp_id
+           ROWS BETWEEN 1 PRECEDING AND CURRENT ROW
+       ) AS last_two_sum
+FROM employees;
+
+👉 Logic:
+
+Current row + previous row only.
+
+📘 4️⃣ Top N Per Group (Very Important Interview Question)
+
+Question:
+Each department la highest salary employee find pannunga.
+
+🔹 Solution using ROW_NUMBER()
+SELECT *
+FROM (
+    SELECT name,
+           dept_id,
+           salary,
+           ROW_NUMBER() OVER (
+               PARTITION BY dept_id
+               ORDER BY salary DESC
+           ) AS rn
+    FROM employees
+) t
+WHERE rn = 1;
+
+👉 Step 1:
+Department wise salary rank pannum.
+
+👉 Step 2:
+rn = 1 filter pannum.
+
+🔥 This is 100% interview question.
+
+📘 5️⃣ Deduplication (Data Engineering Real Use)
+
+Duplicate remove panna:
+
+SELECT *
+FROM (
+    SELECT *,
+           ROW_NUMBER() OVER (
+               PARTITION BY emp_id
+               ORDER BY created_date DESC
+           ) AS rn
+    FROM employees
+) t
+WHERE rn = 1;
+
+👉 Latest record only keep pannuvom.
+
+ETL pipelines la idhu romba use pannuvanga 🔥
+
+📘 6️⃣ Difference – ROW_NUMBER vs RANK vs DENSE_RANK
+Function	Duplicate salary na
+ROW_NUMBER	Unique number
+RANK	Rank skip
+DENSE_RANK	No skip
+📘 7️⃣ LAG + LEAD Deep Example
+
+Salary growth calculation:
+
+SELECT name,
+       salary,
+       salary - LAG(salary) OVER (ORDER BY emp_id) AS growth
+FROM employees;
+
+Time series example (Daily Sales):
+
+SELECT date,
+       sales,
+       sales - LAG(sales) OVER (ORDER BY date) AS daily_growth
+FROM sales_table;
+🔥 Real Data Engineering Use Cases
+
+Window functions use pannuvanga:
+
+✔ Top N products
+✔ Latest customer record
+✔ Running balance
+✔ Trend analysis
+✔ Fraud detection
+✔ Deduplication
+
+🧠 Interview Level Question
+
+Q: Why window function better than GROUP BY?
+
+Answer:
+Because window function rows reduce pannathu.
+Row level + aggregated value same time display panna mudiyum.
+
+
+
+         INDEX + VIEW + STORED PROCEDURE
+1️⃣ INDEX (Very Important for Performance)
+🔹 What is Index?
+
+Index na → Book la index page madhiri.
+Data fast ah search panna use pannuvom.
+
+Without index ❌
+DB full table scan pannum.
+
+With index ✅
+Direct value locate pannum.
+
+🔹 Example
+CREATE INDEX idx_salary
+ON employees(salary);
+
+👉 Salary column la index create pannom.
+
+🔥 Why Important?
+
+Imagine:
+
+10 rows → difference illa
+10 million rows → huge difference 🔥
+
+🔹 When to Use Index?
+
+✔ WHERE condition column
+✔ JOIN column
+✔ ORDER BY column
+
+⚠ Don’t Overuse Index
+
+Too many indexes →
+Insert / Update slow aagum.
+
+Because index um update panna vendiyathu.
+
+📘 2️⃣ VIEW
+🔹 What is View?
+
+View na → Virtual table.
+
+Data physically store pannathu illa.
+Query result ah save pannuvom.
+
+🔹 Example
+CREATE VIEW high_salary_emp AS
+SELECT name, salary
+FROM employees
+WHERE salary > 50000;
+
+Use pannrathu:
+
+SELECT * FROM high_salary_emp;
+🔥 Why View Use Pannuvanga?
+
+✔ Security (Certain columns hide panna)
+✔ Complex query simplify panna
+✔ Reusability
+
+📘 3️⃣ STORED PROCEDURE
+🔹 What is Stored Procedure?
+
+Database kulla save pannura program.
+
+Reusable SQL logic.
+
+🔹 Example
+DELIMITER //
+
+CREATE PROCEDURE GetHighSalary()
+BEGIN
+    SELECT * FROM employees
+    WHERE salary > 50000;
+END //
+
+DELIMITER ;
+
+Call pannrathu:
+
+CALL GetHighSalary();
+🔥 With Parameter
+DELIMITER //
+
+CREATE PROCEDURE GetEmpByDept(IN dept INT)
+BEGIN
+    SELECT * FROM employees
+    WHERE dept_id = dept;
+END //
+
+DELIMITER ;
+
+Call:
+
+CALL GetEmpByDept(101);
+📘 4️⃣ FUNCTION (Difference from Procedure)
+
+Function always return value.
+
+CREATE FUNCTION get_bonus(salary INT)
+RETURNS INT
+DETERMINISTIC
+RETURN salary * 0.10;
+🔥 Procedure vs Function
+Procedure	Function
+Can return multiple rows	Returns single value
+Call using CALL	Use inside SELECT
+Used for operations	Used for calculations
+📘 5️⃣ Query Optimization Basics
+
+✔ Use proper index
+✔ Avoid SELECT *
+✔ Use LIMIT
+✔ Avoid unnecessary subqueries
+✔ Use EXPLAIN command
+
+Example:
+
+EXPLAIN SELECT * FROM employees WHERE salary = 50000;
+🧠 Data Engineering Level Understanding
+
+Real world la:
+
+✔ Index → Fast analytics
+✔ View → Reporting layer
+✔ Procedure → ETL automation
+✔ Window → Analytics
+✔ CTE → Complex transformation
+
+              some interview question
+📘 INTERVIEW PROBLEM 1
+🔥 Second Highest Salary Find Pannunga
+Method 1 – Using Subquery
+SELECT MAX(salary) 
+FROM employees
+WHERE salary < (
+    SELECT MAX(salary) FROM employees
+);
+
+👉 Logic:
+1st max eduthu
+Adhuku keela irukkura highest eduthu
+
+Method 2 – Using DENSE_RANK() (Best Method 🔥)
+SELECT salary
+FROM (
+    SELECT salary,
+           DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+    FROM employees
+) t
+WHERE rnk = 2;
+
+✔ Interview la idhu sonna semma impression 🔥
+
+📘 INTERVIEW PROBLEM 2
+🔥 Duplicate Records Find Pannunga
+SELECT emp_id, COUNT(*)
+FROM employees
+GROUP BY emp_id
+HAVING COUNT(*) > 1;
+
+👉 Duplicate emp_id irundha show pannum
+
+📘 INTERVIEW PROBLEM 3
+🔥 Latest Record Per Employee
+SELECT *
+FROM (
+    SELECT *,
+           ROW_NUMBER() OVER (
+               PARTITION BY emp_id
+               ORDER BY created_date DESC
+           ) AS rn
+    FROM employees
+) t
+WHERE rn = 1;
+
+👉 ETL pipelines la romba use pannuvanga 🔥
+
+📘 INTERVIEW PROBLEM 4
+🔥 Top 3 Salaries Per Department
+SELECT *
+FROM (
+    SELECT name,
+           dept_id,
+           salary,
+           DENSE_RANK() OVER (
+               PARTITION BY dept_id
+               ORDER BY salary DESC
+           ) AS rnk
+    FROM employees
+) t
+WHERE rnk <= 3;
+📘 INTERVIEW PROBLEM 5
+🔥 Employees Without Department (Using LEFT JOIN)
+SELECT e.*
+FROM employees e
+LEFT JOIN departments d
+ON e.dept_id = d.dept_id
+WHERE d.dept_id IS NULL;
+
+👉 Join concept check pannuvaanga
+
+📘 INTERVIEW PROBLEM 6
+🔥 Running Total (Sales Example)
+SELECT date,
+       sales,
+       SUM(sales) OVER (ORDER BY date) AS running_total
+FROM sales;
+📘 INTERVIEW PROBLEM 7
+🔥 Find Employees Who Earn More Than Their Manager
+SELECT e.name AS employee,
+       m.name AS manager,
+       e.salary
+FROM employees e
+JOIN employees m
+ON e.manager_id = m.emp_id
+WHERE e.salary > m.salary;
+
+👉 Self join question 🔥
+
+🧠 Interview Tip
+
+When interviewer ask problem:
+
+First explain logic verbally
+
+Then write optimized query
+
+Mention alternative method
+
+🔥 That gives senior-level impression.
+
+📘 PROBLEM 8
+🔥 Nth Highest Salary (Dynamic)
+
+Question:
+3rd highest salary find pannunga.
+
+Solution – Using DENSE_RANK()
+SELECT salary
+FROM (
+    SELECT salary,
+           DENSE_RANK() OVER (ORDER BY salary DESC) AS rnk
+    FROM employees
+) t
+WHERE rnk = 3;
+
+👉 rnk = N change panna dynamic ah use pannalaam.
+
+📘 PROBLEM 9
+🔥 Consecutive Duplicate Values Find
+
+Example:
+
+id	value
+1	A
+2	A
+3	B
+4	B
+5	B
+
+Find consecutive duplicates.
+
+Solution – Using LAG()
+SELECT id, value
+FROM (
+    SELECT id,
+           value,
+           LAG(value) OVER (ORDER BY id) AS prev_val
+    FROM test_table
+) t
+WHERE value = prev_val;
+
+👉 Previous row compare pannuvom 🔥
+
+📘 PROBLEM 10
+🔥 Find Gap in ID Sequence
+
+Example:
+
+IDs: 1,2,3,5,6
+
+Missing = 4
+
+Solution
+SELECT t1.id + 1 AS missing_id
+FROM employees t1
+LEFT JOIN employees t2
+ON t1.id + 1 = t2.id
+WHERE t2.id IS NULL;
+📘 PROBLEM 11
+🔥 Delete Duplicate Records (Keep Latest)
+DELETE FROM employees
+WHERE id NOT IN (
+    SELECT id
+    FROM (
+        SELECT MAX(id) AS id
+        FROM employees
+        GROUP BY emp_id
+    ) t
+);
+
+⚠ Production la careful use panna vendiyathu.
+
+📘 PROBLEM 12
+🔥 Pivot Data (Rows to Columns)
+
+Example:
+
+emp	month	salary
+A	Jan	1000
+A	Feb	2000
+Solution (Basic Pivot Logic)
+SELECT emp,
+       SUM(CASE WHEN month = 'Jan' THEN salary END) AS Jan,
+       SUM(CASE WHEN month = 'Feb' THEN salary END) AS Feb
+FROM salary_table
+GROUP BY emp;
+
+👉 CASE + GROUP BY use pannuvom 🔥
+
+📘 PROBLEM 13
+🔥 Find Employees Joined in Last 30 Days
+SELECT *
+FROM employees
+WHERE join_date >= CURDATE() - INTERVAL 30 DAY;
+📘 PROBLEM 14
+🔥 Find Department with Highest Total Salary
+SELECT dept_id, SUM(salary) AS total
+FROM employees
+GROUP BY dept_id
+ORDER BY total DESC
+LIMIT 1;
+🧠 Important Interview Thinking Pattern
+
+Whenever problem varum:
+
+✔ Aggregation problem → GROUP BY
+✔ Ranking problem → Window function
+✔ Comparison problem → LAG / LEAD
+✔ Duplicate problem → ROW_NUMBER
+✔ Missing value → Self join
+

@@ -1,0 +1,6 @@
+from datetime import datetime
+
+with open("time_;og.txt","a") as f:
+    f.write(f"script ran at: [datetime.now()]\n")
+
+

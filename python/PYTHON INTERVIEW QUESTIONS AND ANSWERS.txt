@@ -1,0 +1,1426 @@
+🧠 PYTHON INTERVIEW QUESTIONS (150+)
+🔹 1. Basic Python (1–30)
+What is Python?
+What are the key features of Python?
+What is dynamic typing?
+What is interpreted language?
+Difference between list and tuple?
+What is indentation in Python?
+What are keywords in Python?
+What are variables?
+What is type casting?
+What is None in Python?
+What is mutable vs immutable?
+Difference between == and is?
+What are Python data types?
+What is input() function?
+What is print() function?
+What is slicing?
+What is indexing?
+What is a set?
+Difference between set and list?
+What is dictionary?
+How to access dictionary values?
+What is unpacking?
+What are operators in Python?
+What is membership operator?
+What is identity operator?
+What is ternary operator?
+What is pass statement?
+What is del keyword?
+What is len() function?
+What is id() function?
+🔹 2. Control Flow (31–50)
+What is if statement?
+What is elif?
+What is nested if?
+What is for loop?
+What is while loop?
+Difference between for and while?
+What is break?
+What is continue?
+What is else in loop?
+What is range()?
+What is infinite loop?
+How to reverse loop?
+What is enumerate()?
+What is zip()?
+What is nested loop?
+What is loop optimization?
+What is list iteration?
+What is dictionary iteration?
+What is recursion?
+Example of recursion?
+🔹 3. Functions (51–70)
+What is a function?
+Types of functions?
+What is return keyword?
+What is default argument?
+What is keyword argument?
+What is *args?
+What is **kwargs?
+What is lambda function?
+Difference between lambda & normal function?
+What is recursion in function?
+What is scope?
+Local vs global variable?
+What is global keyword?
+What is nested function?
+What is closure?
+What is decorator?
+Why decorators used?
+What is map()?
+What is filter()?
+What is reduce()?
+🔹 4. OOPS (71–100)
+What is OOPS?
+What is class?
+What is object?
+What is init?
+What is self?
+What is inheritance?
+Types of inheritance?
+What is multiple inheritance?
+What is method overriding?
+What is method overloading?
+What is polymorphism?
+What is encapsulation?
+What is abstraction?
+What is private variable?
+What is protected variable?
+What is super()?
+What is abstract class?
+What is interface in Python?
+What is static method?
+What is class method?
+Difference between static & class method?
+What is dunder method?
+What is str?
+What is repr?
+What is operator overloading?
+What is composition?
+What is aggregation?
+What is MRO?
+What is diamond problem?
+What is isinstance()?
+🔹 5. Exception Handling (101–110)
+What is exception?
+What is try-except?
+What is finally block?
+What is else in exception?
+What is custom exception?
+What is raise keyword?
+What are built-in exceptions?
+Difference between error & exception?
+What is multiple exception handling?
+What is exception hierarchy?
+🔹 6. File Handling (111–120)
+What is file handling?
+Modes of file opening?
+Difference between r, w, a?
+What is read()?
+What is readline()?
+What is write()?
+What is with open()?
+What is file pointer?
+What is seek()?
+What is tell()?
+🔹 7. Modules & Packages (121–130)
+What is module?
+What is package?
+Difference between module & package?
+What is import statement?
+What is from import?
+What is name?
+What is main?
+What is pip?
+What is virtual environment?
+What is sys module?
+🔹 8. NumPy (131–140)
+What is NumPy?
+What is ndarray?
+Difference between list & array?
+What is array creation?
+What is reshape()?
+What is slicing in NumPy?
+What is broadcasting?
+What is vectorization?
+What is mean(), sum()?
+What is axis in NumPy?
+🔹 9. Pandas (141–155)
+What is Pandas?
+What is Series?
+What is DataFrame?
+How to read CSV?
+What is head()?
+What is tail()?
+What is info()?
+What is describe()?
+What is loc vs iloc?
+What is groupby()?
+What is merge()?
+What is join()?
+What is pivot table?
+What is missing values handling?
+What is apply()?
+🔹 10. Matplotlib (156–165)
+What is Matplotlib?
+What is pyplot?
+How to plot graph?
+What is line plot?
+What is bar chart?
+What is histogram?
+What is scatter plot?
+What is subplot?
+What is figure?
+How to add labels & title?
+🚀 BONUS (Advanced Interview Level)
+What is GIL (Global Interpreter Lock)?
+What is multithreading?
+What is multiprocessing?
+What is async programming?
+What is generator?
+What is yield?
+Difference between iterator & iterable?
+What is memory management in Python?
+What is garbage collection?
+What is deep copy vs shallow copy?
+
+Answers
+
+1. What is Python?
+
+Python is a high-level, interpreted programming language.
+It is easy to learn and has simple syntax similar to English.
+It is widely used in web development, data science, AI, and automation.
+Python supports multiple programming paradigms like OOP and functional programming.
+
+2. What are the key features of Python?
+
+Python is easy to read and write due to simple syntax.
+It is interpreted, so no compilation is needed.
+It supports dynamic typing and automatic memory management.
+It has a large standard library and strong community support.
+
+3. What is dynamic typing?
+
+Dynamic typing means you don’t need to declare variable types explicitly.
+The type is decided at runtime automatically.
+For example, a variable can store int, string, or float at different times.
+This makes coding faster but requires careful handling to avoid errors.
+
+4. What is an interpreted language?
+
+An interpreted language executes code line by line.
+It does not require a separate compilation step.
+Python uses an interpreter to run the code directly.
+This makes debugging easier but execution can be slower than compiled languages.
+
+5. Difference between list and tuple?
+
+A list is mutable, meaning you can change its elements.
+A tuple is immutable, meaning it cannot be modified after creation.
+Lists use square brackets [], tuples use parentheses ().
+Tuples are faster and used when data should not change.
+
+6. What is indentation in Python?
+
+Indentation refers to spaces at the beginning of a line.
+It is used to define blocks of code in Python.
+Unlike other languages, Python uses indentation instead of braces {}.
+Incorrect indentation leads to syntax errors.
+
+7. What are keywords in Python?
+
+Keywords are reserved words with special meaning in Python.
+Examples include if, else, while, for, def, class, etc.
+They cannot be used as variable names.
+They define the structure and flow of the program.
+
+8. What are variables?
+
+Variables are containers used to store data values.
+They are created when you assign a value to them.
+Python does not require explicit type declaration.
+Example: x = 10 assigns integer value to variable x.
+
+9. What is type casting?
+
+Type casting means converting one data type to another.
+It can be done using functions like int(), float(), str().
+Example: int("5") converts string to integer.
+It helps in performing operations between different data types.
+
+10. What is None in Python?
+
+None is a special constant representing no value or null.
+It is used to indicate absence of a value.
+It is different from 0, False, or empty string.
+It is commonly used as default return value of functions.
+
+11. What is mutable vs immutable?
+
+Mutable objects can be changed after creation.
+Examples: list, dictionary, set.
+Immutable objects cannot be changed after creation.
+Examples: int, string, tuple.
+
+12. Difference between == and is?
+
+== checks if values are equal.
+is checks if both variables refer to same memory object.
+Example: two lists may be equal (==) but not identical (is).
+Use is for identity comparison, == for value comparison.
+
+13. What are Python data types?
+
+Python has built-in data types like int, float, str, list, tuple, set, dict.
+They define the type of data a variable can hold.
+Python is dynamically typed, so types are assigned at runtime.
+Each data type has its own properties and methods.
+
+14. What is input() function?
+
+input() is used to take user input from the keyboard.
+It always returns data as a string.
+You can convert it using type casting if needed.
+Example: age = int(input("Enter age: "))
+
+15. What is print() function?
+
+print() is used to display output on the screen.
+It can print variables, strings, and expressions.
+It supports formatting and multiple values.
+Example: print("Hello", name)
+
+16. What is slicing?
+
+Slicing is used to extract a part of a sequence.
+It is done using [start:end:step] syntax.
+Works on strings, lists, and tuples.
+Example: text[0:5] gives first five characters.
+
+17. What is indexing?
+
+Indexing is accessing elements using position.
+Index starts from 0 in Python.
+Negative indexing accesses elements from the end.
+Example: list[0] gives first element.
+
+18. What is a set?
+
+A set is an unordered collection of unique elements.
+It does not allow duplicate values.
+It is defined using curly braces {}.
+Used for operations like union, intersection.
+
+19. Difference between set and list?
+
+List allows duplicates, set does not.
+List is ordered, set is unordered.
+List uses [], set uses {}.
+Set operations are faster for membership checks.
+
+20. What is dictionary?
+
+A dictionary stores data in key-value pairs.
+Keys must be unique and immutable.
+Values can be of any data type.
+Defined using {} with key:value format.
+
+21. How to access dictionary values?
+
+You can access values using keys.
+Example: dict["key"].
+You can also use get() method.
+get() avoids errors if key is missing.
+
+22. What is unpacking?
+
+Unpacking means extracting values from a collection.
+It assigns elements to variables.
+Example: a, b = [1, 2].
+Useful for tuples, lists, and dictionaries.
+
+23. What are operators in Python?
+
+Operators are symbols used to perform operations.
+Types include arithmetic, comparison, logical, etc.
+Example: +, -, *, /, ==, and, or.
+They help in calculations and decision making.
+
+24. What is membership operator?
+
+Membership operators check if a value exists.
+They are in and not in.
+Example: "a" in "apple" returns True.
+Used with lists, sets, strings, dictionaries.
+
+25. What is identity operator?
+
+Identity operators compare memory locations.
+They are is and is not.
+Example: a is b checks same object.
+Different from equality operator.
+
+26. What is ternary operator?
+
+It is a one-line conditional statement.
+Syntax: value_if_true if condition else value_if_false.
+Used to simplify simple if-else statements.
+Example: x = 10 if a > b else 5.
+
+27. What is pass statement?
+
+pass is a null statement that does nothing.
+It is used as a placeholder.
+Useful in empty loops, functions, or classes.
+Prevents syntax errors when code is required.
+
+28. What is del keyword?
+
+del is used to delete objects.
+It can remove variables, list items, or entire objects.
+Example: del list[0].
+It frees memory by removing references.
+
+29. What is len() function?
+
+len() returns the number of items in an object.
+Works with strings, lists, tuples, etc.
+Example: len("hello") returns 5.
+It is commonly used for loops and validations.
+
+30. What is id() function?
+
+id() returns the memory address of an object.
+It is unique for each object during its lifetime.
+Used to check object identity.
+Example: id(a) shows internal reference value.
+
+🔹 2. Control Flow (31–50)
+31. What is if statement?
+
+The if statement is used to make decisions in Python.
+It executes a block of code only if a condition is true.
+If the condition is false, the block is skipped.
+It is the basic building block for control flow.
+
+32. What is elif?
+
+elif stands for "else if".
+It is used to check multiple conditions.
+It runs only if the previous if or elif is false.
+It helps avoid multiple nested if statements.
+
+33. What is nested if?
+
+A nested if is an if statement inside another if.
+It is used to check multiple conditions step by step.
+Inner if runs only if outer if is true.
+It helps in complex decision-making.
+
+34. What is for loop?
+
+A for loop is used to iterate over a sequence.
+It works with lists, strings, tuples, etc.
+It runs a fixed number of times.
+Example: for i in range(5):
+
+35. What is while loop?
+
+A while loop runs as long as a condition is true.
+It is used when the number of iterations is unknown.
+Condition is checked before each iteration.
+If condition becomes false, loop stops.
+
+36. Difference between for and while?
+
+for loop is used when iterations are known.
+while loop is used when condition-based looping is needed.
+for automatically handles iteration.
+while needs manual control of condition.
+
+37. What is break?
+
+break is used to exit a loop immediately.
+It stops the loop even if condition is true.
+Used when a specific condition is met.
+Works in both for and while loops.
+
+38. What is continue?
+
+continue skips the current iteration.
+It moves control to the next loop iteration.
+Remaining code in that loop is skipped.
+Useful for filtering conditions.
+
+39. What is else in loop?
+
+else can be used with loops.
+It executes when loop finishes normally.
+It does not run if loop is stopped using break.
+Useful for checking loop completion.
+
+40. What is range()?
+
+range() generates a sequence of numbers.
+Commonly used in loops.
+Syntax: range(start, stop, step)
+Example: range(1, 10, 2)
+
+41. What is infinite loop?
+
+An infinite loop runs forever.
+It happens when condition never becomes false.
+Example: while True:
+Needs break statement to stop.
+
+42. How to reverse loop?
+
+You can reverse using range() step.
+Example: range(10, 0, -1)
+Also use slicing like list[::-1].
+It iterates elements in reverse order.
+
+43. What is enumerate()?
+
+enumerate() adds index to iteration.
+It returns index and value as tuple.
+Useful for tracking position.
+Example: for i, v in enumerate(list):
+
+44. What is zip()?
+
+zip() combines multiple iterables.
+It pairs elements from each iterable.
+Returns tuples.
+Stops when shortest iterable ends.
+
+45. What is nested loop?
+
+A loop inside another loop is nested loop.
+Outer loop runs first, then inner loop runs fully.
+Used in matrix and pattern problems.
+Can increase complexity if not optimized.
+
+46. What is loop optimization?
+
+It means improving loop performance.
+Avoid unnecessary calculations inside loops.
+Use efficient data structures.
+Reduces execution time and memory usage.
+
+47. What is list iteration?
+
+It means looping through list elements.
+Done using for loop.
+Example: for item in list:
+Used to access or modify elements.
+
+48. What is dictionary iteration?
+
+You can iterate over keys, values, or both.
+Use .keys(), .values(), .items().
+Example: for k, v in dict.items():
+Useful for processing key-value pairs.
+
+49. What is recursion?
+
+Recursion is a function calling itself.
+It solves problems by breaking into smaller parts.
+Must have a base condition.
+Otherwise leads to infinite recursion.
+
+50. Example of recursion?
+
+Factorial is common example.
+Function calls itself until base condition.
+Example: fact(n) = n * fact(n-1)
+Stops when n == 1.
+
+🔹 3. Functions (51–70)
+51. What is a function?
+
+A function is a block of reusable code.
+It performs a specific task.
+Defined using def keyword.
+Helps in code reusability and modularity.
+
+52. Types of functions?
+
+Built-in functions like print().
+User-defined functions created by user.
+Lambda (anonymous) functions.
+Recursive functions also included.
+
+53. What is return keyword?
+
+return sends value back from function.
+It ends function execution.
+Can return multiple values.
+If not used, function returns None.
+
+54. What is default argument?
+
+Default argument has a predefined value.
+Used if no value is passed.
+Example: def fun(a=10):
+Makes function flexible.
+
+55. What is keyword argument?
+
+Arguments passed using parameter names.
+Order does not matter.
+Example: fun(a=10, b=20)
+Improves readability.
+
+56. What is *args?
+
+*args allows multiple arguments.
+It collects values as tuple.
+Used when number of inputs is unknown.
+Example: def fun(*args):
+
+57. What is **kwargs?
+
+**kwargs allows multiple keyword arguments.
+It stores them as dictionary.
+Useful for dynamic parameters.
+Example: def fun(**kwargs):
+
+58. What is lambda function?
+
+Lambda is anonymous function.
+Defined using lambda keyword.
+Used for short operations.
+Example: lambda x: x*2
+
+59. Difference between lambda & normal function?
+
+Lambda is single-line function.
+Normal function uses def and can have multiple lines.
+Lambda has no name.
+Normal functions are reusable and more flexible.
+
+60. What is recursion in function?
+
+Function calling itself repeatedly.
+Used for problems like factorial, Fibonacci.
+Must have base case.
+Otherwise causes stack overflow.
+
+61. What is scope?
+
+Scope defines variable accessibility.
+It determines where variable can be used.
+Python uses LEGB rule.
+(Local, Enclosing, Global, Built-in)
+
+62. Local vs global variable?
+
+Local variables are inside function.
+Global variables are outside function.
+Local cannot be accessed outside.
+Global can be accessed anywhere.
+
+63. What is global keyword?
+
+Used to modify global variable inside function.
+Without it, new local variable is created.
+Example: global x
+Helps in accessing global scope.
+
+64. What is nested function?
+
+Function inside another function.
+Inner function is only accessible inside outer.
+Used for encapsulation.
+Helps in closures.
+
+65. What is closure?
+
+Closure is function with memory.
+It remembers outer function variables.
+Even after outer function ends.
+Used in decorators and advanced logic.
+
+66. What is decorator?
+
+Decorator modifies function behavior.
+It wraps another function.
+Uses @ syntax.
+Example: @decorator
+
+67. Why decorators used?
+
+Used to add functionality without modifying code.
+Common in logging, authentication.
+Improves code reusability.
+Keeps code clean.
+
+68. What is map()?
+
+map() applies function to all elements.
+Returns map object.
+Example: map(func, list)
+Used for transformations.
+
+69. What is filter()?
+
+filter() selects elements based on condition.
+Returns filtered object.
+Example: filter(func, list)
+Used for data filtering.
+
+70. What is reduce()?
+
+reduce() applies function cumulatively.
+It reduces list to single value.
+Requires functools module.
+Example: sum of all elements.
+
+OOPs
+
+
+71. What is OOPS?
+
+OOPS stands for Object-Oriented Programming System.
+It is a programming paradigm based on objects and classes.
+It helps in organizing code using real-world concepts.
+Main principles include encapsulation, inheritance, polymorphism, and abstraction.
+
+72. What is class?
+
+A class is a blueprint for creating objects.
+It defines properties (variables) and behaviors (methods).
+Declared using class keyword.
+Example: class Car:
+
+73. What is object?
+
+An object is an instance of a class.
+It represents real-world entities.
+It contains data and methods.
+Example: car1 = Car()
+
+74. What is init?
+
+__init__ is a constructor method.
+It is automatically called when object is created.
+Used to initialize variables.
+Example: def init(self, name):
+
+75. What is self?
+
+self refers to the current object.
+It is used to access instance variables and methods.
+Must be the first parameter in class methods.
+It is not a keyword but a convention.
+
+76. What is inheritance?
+
+Inheritance allows one class to use properties of another.
+Parent class → Child class relationship.
+Promotes code reuse.
+Example: class Child(Parent):
+
+77. Types of inheritance?
+
+Single inheritance – one parent.
+Multiple inheritance – multiple parents.
+Multilevel inheritance – chain of classes.
+Hierarchical inheritance – one parent, many children.
+
+78. What is multiple inheritance?
+
+A class inherits from more than one class.
+Example: class C(A, B)
+It can access methods of all parent classes.
+May cause complexity like diamond problem.
+
+79. What is method overriding?
+
+Child class redefines parent class method.
+Method name must be same.
+Used to change behavior.
+Supports runtime polymorphism.
+
+80. What is method overloading?
+
+Same method name with different parameters.
+Python does not support true overloading.
+Achieved using default arguments or *args.
+Handled dynamically at runtime.
+
+81. What is polymorphism?
+
+Polymorphism means "many forms".
+Same method behaves differently.
+Example: same function works for int and string.
+Improves flexibility.
+
+82. What is encapsulation?
+
+Encapsulation means wrapping data and methods together.
+It restricts direct access to data.
+Achieved using private variables.
+Improves data security.
+
+83. What is abstraction?
+
+Abstraction hides implementation details.
+Shows only essential features.
+Achieved using abstract classes.
+Improves simplicity.
+
+84. What is private variable?
+
+Private variables are restricted.
+Defined using __var.
+Cannot be accessed directly outside class.
+Used for data hiding.
+
+85. What is protected variable?
+
+Protected variables use single underscore _var.
+Accessible inside class and subclasses.
+Not strictly private.
+Used for controlled access.
+
+86. What is super()?
+
+super() calls parent class methods.
+Used in inheritance.
+Avoids direct parent class reference.
+Example: super().init()
+
+87. What is abstract class?
+
+Abstract class cannot be instantiated.
+Contains abstract methods.
+Defined using abc module.
+Used as blueprint for subclasses.
+
+88. What is interface in Python?
+
+Python does not have strict interfaces.
+Achieved using abstract classes.
+Defines method structure only.
+Implemented by subclasses.
+
+89. What is static method?
+
+Static method belongs to class, not object.
+Defined using @staticmethod.
+Does not use self.
+Used for utility functions.
+
+90. What is class method?
+
+Class method works with class variables.
+Uses @classmethod.
+Takes cls as parameter.
+Can modify class state.
+
+91. Difference between static & class method?
+
+Static method has no access to class/object.
+Class method accesses class using cls.
+Static used for utility logic.
+Class method used for class-level changes.
+
+92. What is dunder method?
+
+Dunder means double underscore methods.
+Example: __init__, __str__.
+They have special meaning.
+Used to customize behavior.
+
+93. What is str?
+
+Defines string representation of object.
+Called by print().
+Returns user-friendly output.
+Example: def str(self):
+
+94. What is repr?
+
+Used for developer representation.
+More detailed than str.
+Used for debugging.
+Should return valid expression.
+
+95. What is operator overloading?
+
+Giving new meaning to operators.
+Done using dunder methods.
+Example: __add__ for +
+Used in custom objects.
+
+96. What is composition?
+
+Class contains object of another class.
+Strong relationship.
+Example: Car has Engine.
+Used for code reuse.
+
+97. What is aggregation?
+
+Weak relationship between objects.
+Objects can exist independently.
+Example: Student and Department.
+Less dependent than composition.
+
+98. What is MRO?
+
+MRO = Method Resolution Order.
+Defines order of method execution.
+Used in inheritance.
+Checked using mro().
+
+99. What is diamond problem?
+
+Occurs in multiple inheritance.
+Same method inherited from multiple paths.
+Causes ambiguity.
+Solved using MRO.
+
+100. What is isinstance()?
+
+Checks object type.
+Returns True or False.
+Example: isinstance(x, int)
+Useful for validation.
+
+🔹 5. Exception Handling (101–110)
+101. What is exception?
+
+Exception is an error during execution.
+It interrupts normal flow.
+Handled using try-except.
+Prevents program crash.
+
+102. What is try-except?
+
+Used to handle exceptions.
+try block contains risky code.
+except handles error.
+Prevents abrupt termination.
+
+103. What is finally block?
+
+Always executes.
+Runs whether exception occurs or not.
+Used for cleanup.
+Example: closing files.
+
+104. What is else in exception?
+
+Runs if no exception occurs.
+Placed after except.
+Separates normal logic.
+Improves readability.
+
+105. What is custom exception?
+
+User-defined exception.
+Created using class.
+Inherits Exception class.
+Used for specific errors.
+
+106. What is raise keyword?
+
+Used to throw exception manually.
+Example: raise ValueError
+Helps in validation.
+Stops execution.
+
+107. What are built-in exceptions?
+
+Predefined exceptions.
+Examples: ValueError, TypeError, IndexError.
+Used automatically by Python.
+Helps debugging.
+
+108. Difference between error & exception?
+
+Errors are serious issues.
+Exceptions can be handled.
+Errors stop execution permanently.
+Exceptions allow recovery.
+
+109. What is multiple exception handling?
+
+Handling multiple exceptions.
+Using multiple except blocks.
+Example: except (TypeError, ValueError):
+Improves robustness.
+
+110. What is exception hierarchy?
+
+Exceptions are organized in tree structure.
+Base class is Exception.
+Derived classes include specific errors.
+Helps in structured handling.
+
+🔹 6. File Handling (111–120)
+111. What is file handling?
+
+Used to read/write files.
+Helps in data storage.
+Python provides built-in methods.
+Supports text and binary files.
+
+112. Modes of file opening?
+
+Modes define file usage.
+Examples: r, w, a, rb, wb.
+r = read, w = write.
+a = append mode.
+
+113. Difference between r, w, a?
+
+r reads file.
+w overwrites file.
+a appends data.
+w creates file if not exists.
+
+114. What is read()?
+
+Reads entire file content.
+Returns string.
+Example: file.read()
+Useful for full file reading.
+
+115. What is readline()?
+
+Reads one line at a time.
+Returns string.
+Useful for large files.
+Example: file.readline()
+
+116. What is write()?
+
+Writes data to file.
+Overwrites in write mode.
+Returns number of characters.
+Example: file.write("text")
+
+117. What is with open()?
+
+Used for safe file handling.
+Automatically closes file.
+Improves readability.
+Example: with open("file.txt") as f:
+
+118. What is file pointer?
+
+Pointer indicates current position.
+Moves during read/write.
+Used internally by Python.
+Can be controlled using seek().
+
+119. What is seek()?
+
+Moves file pointer.
+Example: seek(0) → beginning.
+Used for random access.
+Takes offset value.
+
+120. What is tell()?
+
+Returns current position.
+Useful for tracking pointer.
+Example: file.tell()
+Works with seek().
+
+🔹 7. Modules & Packages (121–130)
+121. What is module?
+
+A module is a Python file.
+Contains functions and variables.
+Helps organize code.
+Example: math module.
+
+122. What is package?
+
+Package is collection of modules.
+Organized in directories.
+Contains __init__.py.
+Used for large projects.
+
+123. Difference between module & package?
+
+Module = single file.
+Package = folder of modules.
+Modules are simple.
+Packages are structured.
+
+124. What is import statement?
+
+Used to include modules.
+Example: import math
+Allows using module functions.
+Improves code reuse.
+
+125. What is from import?
+
+Imports specific items.
+Example: from math import sqrt
+Reduces need to write module name.
+Improves readability.
+
+126. What is name?
+
+Special variable.
+Stores module name.
+If main file → "main"
+Used to control execution.
+
+127. What is main?
+
+Entry point of program.
+Executed when script runs.
+Used with if condition.
+Prevents unwanted execution.
+
+128. What is pip?
+
+pip is package manager.
+Used to install libraries.
+Example: pip install numpy
+Helps manage dependencies.
+
+129. What is virtual environment?
+
+Isolated Python environment.
+Used to manage dependencies.
+Avoids conflicts between projects.
+Created using venv.
+
+130. What is sys module?
+
+Provides system-related functions.
+Access command-line arguments.
+Example: sys.argv
+Used for system-level operations.
+
+🔹 8. NumPy (131–140)
+131. What is NumPy?
+
+NumPy is a powerful Python library for numerical computing.
+It provides fast operations on arrays and matrices.
+Used in data science, machine learning, and scientific computing.
+It is faster than Python lists due to optimized C implementation.
+
+132. What is ndarray?
+
+ndarray is the main object in NumPy.
+It stands for n-dimensional array.
+It stores homogeneous data (same type).
+Supports fast mathematical operations.
+
+133. Difference between list & array?
+
+List can store mixed data types.
+NumPy array stores same data type only.
+Arrays are faster and memory efficient.
+Lists are flexible but slower for calculations.
+
+134. What is array creation?
+
+Arrays can be created using functions like array(), zeros(), ones().
+Example: np.array([1,2,3])
+Also created using arange(), linspace().
+Used to initialize data structures.
+
+135. What is reshape()?
+
+reshape() changes array shape.
+It does not change data.
+Example: 1D → 2D conversion.
+Total elements must remain same.
+
+136. What is slicing in NumPy?
+
+Slicing extracts subset of array.
+Syntax: array[start:end]
+Works in multi-dimensions.
+Returns view, not copy.
+
+137. What is broadcasting?
+
+Broadcasting allows operations on different-sized arrays.
+NumPy automatically adjusts shapes.
+Avoids explicit loops.
+Improves performance.
+
+138. What is vectorization?
+
+Vectorization replaces loops with array operations.
+Makes code faster and cleaner.
+Uses built-in NumPy functions.
+Example: adding arrays directly.
+
+139. What is mean(), sum()?
+
+mean() returns average value.
+sum() returns total sum.
+Used for statistical calculations.
+Works on arrays efficiently.
+
+140. What is axis in NumPy?
+
+Axis defines direction of operation.
+axis=0 → column-wise.
+axis=1 → row-wise.
+Used in aggregation functions.
+
+🔹 9. Pandas (141–155)
+141. What is Pandas?
+
+Pandas is a data analysis library.
+Used for data cleaning and manipulation.
+Works with structured data.
+Provides Series and DataFrame.
+
+142. What is Series?
+
+Series is 1D labeled data.
+Similar to column in table.
+Stores values with index.
+Example: pd.Series([1,2,3])
+
+143. What is DataFrame?
+
+DataFrame is 2D table.
+Contains rows and columns.
+Most used Pandas structure.
+Similar to Excel sheet.
+
+144. How to read CSV?
+
+Use read_csv() function.
+Example: pd.read_csv("file.csv")
+Loads data into DataFrame.
+Supports many options.
+
+145. What is head()?
+
+Displays first 5 rows.
+Used for quick view.
+Can specify number.
+Example: df.head(10)
+
+146. What is tail()?
+
+Displays last 5 rows.
+Useful for checking data end.
+Example: df.tail()
+Helps verify data loading.
+
+147. What is info()?
+
+Gives summary of DataFrame.
+Shows columns, types, null values.
+Useful for data understanding.
+Example: df.info()
+
+148. What is describe()?
+
+Provides statistics summary.
+Includes mean, std, min, max.
+Works on numeric data.
+Example: df.describe()
+
+149. What is loc vs iloc?
+
+loc uses labels (names).
+iloc uses index (positions).
+loc is label-based selection.
+iloc is integer-based.
+
+150. What is groupby()?
+
+Used to group data.
+Applies aggregation functions.
+Example: sum, mean.
+Useful for analysis.
+
+151. What is merge()?
+
+Combines DataFrames.
+Similar to SQL join.
+Based on common columns.
+Used for relational data.
+
+152. What is join()?
+
+Used to combine DataFrames by index.
+Simpler than merge.
+Works on index alignment.
+Useful for quick joins.
+
+153. What is pivot table?
+
+Summarizes data.
+Reshapes DataFrame.
+Used for analysis.
+Example: aggregation table.
+
+154. What is missing values handling?
+
+Missing values handled using fillna(), dropna().
+Can replace or remove null values.
+Important for data cleaning.
+Ensures accuracy.
+
+155. What is apply()?
+
+Applies function to data.
+Works on rows or columns.
+Example: df.apply(func)
+Used for custom operations.
+
+🔹 10. Matplotlib (156–165)
+156. What is Matplotlib?
+
+Matplotlib is a plotting library.
+Used for data visualization.
+Supports graphs and charts.
+Widely used in data science.
+
+157. What is pyplot?
+
+pyplot is a module of Matplotlib.
+Provides simple plotting interface.
+Works like MATLAB.
+Imported as plt.
+
+158. How to plot graph?
+
+Use plt.plot() function.
+Provide x and y values.
+Call plt.show() to display.
+Example: line graph.
+
+159. What is line plot?
+
+Line plot shows data trends.
+Points connected by lines.
+Used for time series.
+Simple visualization.
+
+160. What is bar chart?
+
+Bar chart shows categorical data.
+Uses bars to represent values.
+Useful for comparisons.
+Example: sales data.
+
+161. What is histogram?
+
+Histogram shows data distribution.
+Uses bins for grouping.
+Useful for frequency analysis.
+Example: age distribution.
+
+162. What is scatter plot?
+
+Scatter plot shows relationship.
+Uses points on graph.
+Helps identify patterns.
+Used in correlation analysis.
+
+163. What is subplot?
+
+Multiple plots in one figure.
+Created using subplot().
+Useful for comparison.
+Example: 2 graphs side by side.
+
+164. What is figure?
+
+Figure is main container.
+Holds all plots.
+Defined using plt.figure().
+Controls size and layout.
+
+165. How to add labels & title?
+
+Use plt.xlabel(), plt.ylabel().
+Use plt.title() for title.
+Improves readability.
+Makes graph understandable.
+
+🚀 BONUS (Advanced Interview)
+What is GIL (Global Interpreter Lock)?
+
+GIL allows only one thread to execute Python bytecode.
+Used in CPython interpreter.
+Prevents true parallel execution.
+Ensures memory safety.
+
+What is multithreading?
+
+Running multiple threads in a program.
+Used for I/O tasks.
+Threads share memory.
+Limited by GIL in Python.
+
+What is multiprocessing?
+
+Runs multiple processes.
+Each process has separate memory.
+Achieves true parallelism.
+Used for CPU-intensive tasks.
+
+What is async programming?
+
+Handles tasks asynchronously.
+Uses async and await.
+Improves performance for I/O tasks.
+Non-blocking execution.
+
+What is generator?
+
+Generator produces values one by one.
+Uses yield.
+Memory efficient.
+Used in large data processing.
+
+What is yield?
+
+yield returns value and pauses function.
+Function resumes from same point.
+Used in generators.
+Better than return for iteration.
+
+Difference between iterator & iterable?
+
+Iterable can be looped (list, tuple).
+Iterator produces values using next().
+Iterable → converted to iterator.
+Iterator maintains state.
+
+What is memory management in Python?
+
+Python uses automatic memory management.
+Handled by interpreter.
+Uses reference counting.
+Also uses garbage collection.
+
+What is garbage collection?
+
+Removes unused objects.
+Frees memory automatically.
+Prevents memory leaks.
+Works with reference counting.
+
+What is deep copy vs shallow copy?
+
+Shallow copy copies references.
+Deep copy copies full data.
+Changes in shallow affect original.
+Deep copy creates independent object.
